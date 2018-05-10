@@ -18,7 +18,7 @@
 
     <h1><center>Scoreboard</center></h1>
     <center><h3 id="wins">Wins</h3>
-    <h3 id="loses">loses</h3>
+    <h3 id="losses">losses</h3>
     <h3 id="guessesLeft">Guesses Left</h3>
     <h3 id="totalGuesses">Total Guesses so far</h3></center>
 </body>
@@ -27,37 +27,30 @@
 
     var winstotal = 0;
     var losestotal = 0;
-    var guessesLeftTotal = -10;
-    var totalGuessesLeft = 0;
+    var guessesLeftTotal = 10;
+    var totalGuesses = 0;
 
     var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l',
     'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-    <input type="text" onKeyPress="alert(this.value)">
+    document.onkeyup = function(event) {
+	var playerGuess = event.key;
+	lettersGuessed.push(playerGuess);
+	console.log(computerGuess[0]);
 
-    
+    if(userGuess === computerChoice){
+        winstotal++;
+    }else{
+        guessesLeftTotal--;
+    }
 
+    if(guessesLeftTotal === 0){
+        lossestotal++
+    }
 
-
-    //document.onkeypress = function(event) {
-    //var userGuess = event.key;
-    //alert = event.key
-
-
-    //if(userGuess === computerChoice){
-    //    wins++;
-    //}else{
-      //  guesses--;
-    //}
-
-    //if(guesses === 0){
-    //    losses++
-    //}
-
-
-//document.getElementById('wins').innerHTML = "Wins: " + wins;
-  //  document.getElementById('losses').innerHTML = "losses: " + losses;
-    //document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+document.getElementById('wins').innerHTML = "Wins: " + winstotal;
+    document.getElementById('losses').innerHTML = "losses: " + lossestotal;
+    document.getElementById('guesses').innerHTML = "Guesses left: " + totalGuesses;
 
 //}
     
@@ -68,9 +61,4 @@
 //6. Guesses Left: (# of guesses left. This will update)
 
 </script>
-
-
-
-
-
 </html>
