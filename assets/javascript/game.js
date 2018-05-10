@@ -34,8 +34,8 @@
         }
         
 
-//Wins: (# of times the user has guessed the letter correctly)
-//5. Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
-//6. Guesses Left: (# of guesses left. This will update)
+    // Wins: (# of times the user has guessed the letter correctly)
+    // 5. Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
+    // 6. Guesses Left: (# of guesses left. This will update)
 
 </script>
